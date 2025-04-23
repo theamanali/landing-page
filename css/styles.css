@@ -11,15 +11,15 @@ body {
   background-color: #1f2937;
   display: flex;
   flex-direction: column;
-  padding: 24px 168px;
+  padding: 24px clamp(1rem, 10vw, 168px);
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  /* flex-wrap: wrap; */
   gap: 24px;
-  flex: auto;
 }
 
 .logo {
@@ -30,40 +30,51 @@ header {
   flex-shrink: 0;
 }
 
-img {
-  max-width: 100%;
-  min-width: 90%;
-}
-
 a {
   text-decoration: none;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 
 .hero-section {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 48px;
   margin: 96px 0;
-  flex: auto;
+}
+
+@media (max-width: 995px) {
+  .hero-section {
+    justify-content: center;
+  }
 }
 
 .hero-left-section {
   display: flex;
+  flex: 1 1 150px;
   flex-direction: column;
-  width: 450px;
+  max-width: 450px;
+}
+
+.hero-image-container {
+  flex: auto;
+  max-width: 450px;
 }
 
 .hero-image {
-  width: 450px;
-  height: 222px;
-  min-width: 200px;
+  max-width: 100%;
+  border-radius: 16px;
+  align-items: flex-end;
+  height: auto;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
 }
 
 .hero-main {
   font-size: 48px;
   font-weight: 900;
-  display: block;
   min-width: 280px;
   color: #f9faf8;
   margin: 0;
@@ -76,17 +87,14 @@ a {
 .hero-sub,
 a {
   font-size: 18px;
-  color: #e5e7eb;
+  color: #979797;
 }
 
 button {
   background-color: #3882f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-wrap: nowrap;
-  padding: 12px 72px;
-  width: 100px;
+  align-self: flex-start;
+  white-space: nowrap;
+  padding: 8px 36px;
   border: 0;
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -100,12 +108,40 @@ button {
 
 .second-element {
   display: flex;
+  flex: auto;
+  flex-direction: column;
+  padding-bottom: 98px;
+}
+
+.information-header {
+  margin: 48px auto;
+}
+
+.row-of-information {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 24px;
+  column-gap: 12px;
+  margin-inline: clamp(1rem, 18vw, 400px);
+}
+
+.information-image-text {
+  flex: 1 0 168px;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-h2 {
-  margin: 48px;
+.information-image {
+  width: 164px;
+  height: 164px;
+  border: 4px solid #3882f6;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
 }
 
 .information-header {
@@ -117,6 +153,9 @@ h2 {
 .information-content {
   font-size: 18px;
   color: #6d747d;
+  width: 168px;
+  text-align: center;
+  margin: 12px 0 0 0;
 }
 
 .third-element {
