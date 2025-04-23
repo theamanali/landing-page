@@ -171,7 +171,7 @@ button {
   align-items: center;
   justify-content: center;
   max-width: 800px;
-  gap: 12px;
+  gap: 24px;
 }
 
 .quote-text {
@@ -186,11 +186,64 @@ button {
 .quote-author-text {
   font-weight: bold;
   align-self: flex-end;
+  font-size: 24px;
   margin: 0;
 }
 
 .fourth-element {
+  padding: 96px clamp(1rem, 10vw, 200px);
+  display: flex;
+}
+
+.call-to-action-section {
+  display: flex;
+  flex: 1 1 auto;
+  max-width: 900px;
+  justify-content: space-between;
   background-color: #3882f6;
+  margin: auto;
+  row-gap: 36px;
+  column-gap: 24px;
+  padding: 48px 96px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  color: #f9faf8;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1065px) {
+  .call-to-action-section {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.left-call-to-action {
+  gap: 8px;
+  display: flex;
+  min-width: 154px;
+  flex-direction: column;
+}
+
+.call-to-action-left-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.call-to-action-left-sub {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.call-to-action-button {
+  border: 2px solid #f9faf8;
+  align-self: center;
 }
 
 footer {
